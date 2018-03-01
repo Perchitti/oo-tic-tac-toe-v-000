@@ -89,8 +89,8 @@ end
     @board.count{|token| token == "X" || token == "O"}
   end
 
-  def move(index, player)
-    @board[index] = player
+  def move(index, token)
+    @board[index] = token
   end
 
   def winner
