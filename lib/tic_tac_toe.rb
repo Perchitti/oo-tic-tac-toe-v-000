@@ -46,7 +46,6 @@ end
       position_taken?(@board, combo[0])
       return combo
     end
-    end
   end
 
   def full?
