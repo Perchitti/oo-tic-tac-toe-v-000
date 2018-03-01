@@ -11,6 +11,11 @@ class TicTacToe
     [6,4,2]
   ]
 
+  def initialize
+    @board = [9,""]
+end
+
+
   def play(board)
     while !over?(board)
       turn(board)
