@@ -75,12 +75,12 @@ end
     end
   end
 
-  def position_taken?(board, index)
-    board[index]== "X" || board[index] == "O"
+  def position_taken?(index)
+    @board[index]== "X" || @board[index] == "O"
   end
 
-  def current_player(board)
-    turn_count(board) % 2 == 0 ? "X" : "O"
+  def current_player
+    turn_count(@board) % 2 == 0 ? "X" : "O"
   end
 
   def turn_count(board)
