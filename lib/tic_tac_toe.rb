@@ -57,8 +57,6 @@ end
 
   def over?
     won? || draw?
-  else
-    "Cat's Game"
   end
 
   def input_to_index(user_input)
