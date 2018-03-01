@@ -16,13 +16,13 @@ end
   ]
 
 
-  def play(board)
-    while !over?(board)
-      turn(board)
+  def play
+    while !over?(@board)
+      turn(@board)
     end
-    if won?(board)
+    if won?(@board)
       puts "Congratulations #{winner(board)}!"
-    elsif draw?(board)
+    elsif draw?(@board)
       puts "Cat's Game!"
     end
   end
@@ -35,28 +35,28 @@ end
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 
-  def valid_move?(board, index)
-    index.between?(0,8) && !position_taken?(board, index)
+  def valid_move?(index)
+    index.between?(0,8) && !position_taken?(@board, index)
   end
 
-  def won?(board)
+  def won?
     WIN_COMBINATIONS.detect do |combo|
-      board[combo[0]] == board[combo[1]] &&
-      board[combo[1]] == board[combo[2]] &&
-      position_taken?(board, combo[0])
+      @board[combo[0]] == @board[combo[1]] &&
+      @board[combo[1]] == @board[combo[2]] &&
+      position_taken?(@board, combo[0])
     end
   end
 
-  def full?(board)
-    board.all?{|token| token == "X" || token == "O"}
+  def full?
+    @board.all?{|token| token == "X" || token == "O"}
   end
 
-  def draw?(board)
-    !won?(board) && full?(board)
+  def draw?
+    !won?(@board) && full?(@board)
   end
 
-  def over?(board)
-    won?(board) || draw?(board)
+  def over?
+    won?(@board) || draw?(@board)
   end
 
   def input_to_index(user_input)
