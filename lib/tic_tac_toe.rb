@@ -53,11 +53,11 @@ end
   end
 
   def draw?
-    !won?(@board) && full?(@board)
+    !won? && full?
   end
 
   def over?
-    won?(@board) || draw?(@board)
+    won? || draw?
   else
     "Cat's Game"
   end
