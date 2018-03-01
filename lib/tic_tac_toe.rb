@@ -83,7 +83,7 @@ class TicTacToe
     board.count{|token| token == "X" || token == "O"}
   end
 
-  def move(board, index, player = "X" || "O")
+  def move(board, index, player)
     board[index] = player
   end
 
