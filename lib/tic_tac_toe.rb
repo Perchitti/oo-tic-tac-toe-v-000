@@ -58,6 +58,8 @@ end
 
   def over?
     won?(@board) || draw?(@board)
+  else
+    "Cat's Game"
   end
 
   def input_to_index(user_input)
